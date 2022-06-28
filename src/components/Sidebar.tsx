@@ -18,7 +18,6 @@ const GET_LESSONS_QUERY = gql`
 		}
 	}
 `
-
 interface GetLessonsQueryResponse {
 	lessons: {
 		id: string;
@@ -38,7 +37,7 @@ export function Sidebar() {
 			<div className="flex flex-col gap-8">
 				{data?.lessons.map( lesson => {
 					return (
-					<Lesson key={lesson.id} title={lesson.title} slug={lesson.title} availableAt={new Date(lesson.availableAt)} type={lesson.lessonType}/>
+					<Lesson key={lesson.id} title={lesson.title} slug={lesson.slug} availableAt={new Date(lesson.availableAt)} type={lesson.lessonType}/>
 					)
 				})}
 			</div>	
